@@ -62,18 +62,6 @@
                 display: block;
                 @include transition(.2s);
                 position: relative;
-                &::before {
-                    position: absolute;
-                    content: "";
-                    width: 41px;
-                    height: 2px;
-                    left: -62px;
-                    top: 26px;
-                    background:$theme-color;
-                    @media #{$xs}{
-                        position: unset;
-                     }
-                }
                 @media #{$large1}{
                     font-size: 33px;
                 }
@@ -85,7 +73,6 @@
                 }
                 @media #{$xs}{
                     font-size: 26px;
-
                 }
                 &:hover{
                     color: $theme-color;

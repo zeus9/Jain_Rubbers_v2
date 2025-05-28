@@ -35,12 +35,23 @@
 
 /* 3. slick Nav */
 // mobile_menu
-    var menu = $('ul#navigation');
+    var menu = $('nav ul#navigation');
     if(menu.length){
       menu.slicknav({
         prependTo: ".mobile_menu",
         closedSymbol: '+',
-        openedSymbol:'-'
+        openedSymbol:'-',
+        label: '',
+        removeIds: true,
+        allowParentLinks: true,
+        nestedParentLinks: true,
+        showChildren: false,
+        beforeOpen: function() {
+          $('body').addClass('slicknav_open');
+        },
+        beforeClose: function() {
+          $('body').removeClass('slicknav_open');
+        }
       });
     };
 

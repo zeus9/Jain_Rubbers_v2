@@ -742,14 +742,6 @@
     .widget_title {
         font-size: 20px;
         margin-bottom: 40px;
-        // color: $title-color;
-
-        &::after {
-            content: "";
-            display: block;
-            padding-top: 15px;
-            border-bottom: 1px solid #f0e9ff;
-        }
     }
 
     .single_sidebar_widget {
