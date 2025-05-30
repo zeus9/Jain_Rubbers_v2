@@ -271,42 +271,53 @@
                 position: absolute;
                 left: 0;
                 right: 0;
+                transition: all 0.3s ease-in-out;
                 &:nth-child(1) { top: 0; }
                 &:nth-child(2) { top: 9px; }
                 &:nth-child(3) { top: 18px; }
             }
+
+            // Animation classes for cross
+            &.slicknav_open {
+                .slicknav_icon-bar {
+                    &:nth-child(1) {
+                        transform: translateY(9px) rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: translateY(-9px) rotate(-45deg);
+                    }
+                }
+            }
         }
-        // .slicknav_menutxt {
-        //     display: none !important;
-        // }
-        .slicknav_nav{
+        .slicknav_nav {
             margin-top: 3px !important;
             background: #000;
             border: 0;
-            // box-shadow: 0 0 10px 3px rgba(141, 140, 140, 0.5);
             a {
                 font-size: 15px;
                 padding: 7px 10px;
                 color: #fff;
-                &:hover{
+                &:hover {
                     background: transparent;
                     color: $theme-color;
                 }
             }
             .header-btn {
-                &:hover{
+                &:hover {
                     color: #fff !important;
                     background: $btn_bg;
                     border-radius: 0px;
                 }
             }
             // Dropdown Menu button Padding None
-        .slicknav_item a {
+            .slicknav_item a {
                 padding: 0 !important;
             }
         }
     }
-
 }
 // Header Right Btn
 .header-right-btn {
