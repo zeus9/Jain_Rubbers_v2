@@ -49,10 +49,12 @@
         beforeOpen: function() {
           $('body').addClass('slicknav_open');
           $('.slicknav_btn').addClass('slicknav_open');
+          $('.slicknav_nav').addClass('slicknav_open');
         },
         beforeClose: function() {
           $('body').removeClass('slicknav_open');
           $('.slicknav_btn').removeClass('slicknav_open');
+          $('.slicknav_nav').removeClass('slicknav_open');
         }
       });
     };
