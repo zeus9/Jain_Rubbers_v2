@@ -312,6 +312,19 @@
             &.slicknav_open {
                 right: 0 !important;
             }
+
+            // Add dimming overlay when menu is open
+            &.slicknav_open::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: -1;
+                transition: opacity 0.3s ease;
+            }
             
             a {
                 font-size: 15px !important;
