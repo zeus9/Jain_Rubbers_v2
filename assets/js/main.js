@@ -46,15 +46,22 @@
         allowParentLinks: true,
         nestedParentLinks: true,
         showChildren: false,
-        beforeOpen: function() {
+        beforeOpen: function(trigger) {
           $('body').addClass('slicknav_open');
           $('.slicknav_btn').addClass('slicknav_open');
           $('.slicknav_nav').addClass('slicknav_open');
+          // Only toggle the clicked submenu
+          $(trigger).parent().toggleClass('slicknav_open');
         },
-        beforeClose: function() {
-          $('body').removeClass('slicknav_open');
-          $('.slicknav_btn').removeClass('slicknav_open');
-          $('.slicknav_nav').removeClass('slicknav_open');
+        beforeClose: function(trigger) {
+          // Only remove classes if closing the main menu
+          if ($(trigger).hasClass('slicknav_btn')) {
+            $('body').removeClass('slicknav_open');
+            $('.slicknav_btn').removeClass('slicknav_open');
+            $('.slicknav_nav').removeClass('slicknav_open');
+          }
+          // Toggle the clicked submenu
+          $(trigger).parent().toggleClass('slicknav_open');
         }
       });
     };
