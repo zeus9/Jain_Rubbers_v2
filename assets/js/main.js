@@ -39,8 +39,8 @@
     if(menu.length){
       menu.slicknav({
         prependTo: ".mobile_menu",
-        closedSymbol: '+',
-        openedSymbol:'-',
+        closedSymbol: '&#9661;',
+        openedSymbol: '&#9651;',
         label: '',
         removeIds: true,
         allowParentLinks: true,

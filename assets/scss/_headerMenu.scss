@@ -357,6 +357,16 @@
             .slicknav_item a {
                 padding: 0 !important;
             }
+            .slicknav_arrow {
+                font-size: 9px !important;
+                margin: 0 0 0 0.4em !important;
+                color: #fff !important;
+                display: inline-block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: relative !important;
+                top: -1px !important;
+            }
         }
     }
 }
