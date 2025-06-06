@@ -259,10 +259,19 @@
             z-index: 10000;
             // mobile Menu button color
             .slicknav_icon {
-                display: block;
-                width: 25px;
-                height: 20px;
+                width: 9px;
+                height: 9px;
+                margin: 0;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 5px;
                 position: relative;
+                top: -1px;
+                svg {
+                    width: 9px;
+                    height: 9px;
+                    fill: currentColor;
+                }
             }
             .slicknav_icon-bar {
                 background-color: #fff !important;
