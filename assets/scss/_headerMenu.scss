@@ -323,6 +323,49 @@
     opacity: 0.9;
     z-index: 5;
 
+    // Override font sizes
+    font-size: 1em !important;
+    
+    a {
+        font-size: 1.2em !important;
+        padding-top: 0.6em !important;
+        padding-bottom: 0.6em !important;
+        position: relative !important;
+    }
+
+    // Override parent link, row and item styles 
+    .slicknav_parent-link, 
+    .slicknav_row,
+    .slicknav_item {
+        a {
+            font-size: 1.2em !important;
+            padding-top: 0.6em !important;
+            padding-bottom: 0.6em !important;
+        }
+    }
+
+    // Submenu items
+    ul {
+        a {
+            font-size: 1.2em !important;
+            padding-top: 0.5em !important;
+            padding-bottom: 0.5em !important;
+        }
+    }
+
+    // Position dropdown arrow
+    .slicknav_arrow {
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        margin: 0 !important;
+        font-size: 1.8em !important;
+        width: 1.6em !important;
+        height: 1.6em !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
     &.slicknav_open {
         right: 0 !important;
     }
