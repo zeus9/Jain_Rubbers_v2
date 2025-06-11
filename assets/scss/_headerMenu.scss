@@ -246,7 +246,7 @@
     position: absolute;
     right: 0px;
     width: 100%;
-    z-index: 9999;
+    z-index: 3;
     .slicknav_menu {
         background: transparent !important;
         margin-top: 0px !important;
@@ -256,7 +256,7 @@
             padding: 10px;
             background: transparent !important;
             display: inline-block;
-            z-index: 10000;
+            z-index: 6;
             // mobile Menu button color
             .slicknav_icon {
                 width: 9px;
@@ -302,83 +302,52 @@
                 }
             }
         }
-        .slicknav_nav {
-            margin-top: 0 !important;
-            background: #000 !important;
-            border: 0 !important;
-            position: fixed !important;
-            top: 0 !important;
-            right: -300px !important;
-            width: 300px !important;
-            height: 100vh !important;
-            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            padding: 80px 20px 20px !important;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1) !important;
-            overflow-y: auto !important;
-            display: block !important;
-            opacity: 0.9;
-
-            &.slicknav_open {
-                right: 0 !important;
-            }
-
-            // Add dimming overlay when menu is open
-            &.slicknav_open::after {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: -1;
-                transition: opacity 0.3s ease;
-            }
-            
-            a {
-                font-size: 15px !important;
-                padding: 7px 10px !important;
-                color: #fff !important;
-                opacity: 0;
-                transform: translateX(20px);
-                transition: all 0.3s ease;
-                transition-delay: 0.1s;
-                
-                &:hover {
-                    background: transparent !important;
-                    color: $theme-color !important;
-                }
-            }
-            
-            &.slicknav_open a {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            
-            .header-btn {
-                &:hover {
-                    color: #fff !important;
-                    background: $btn_bg !important;
-                    border-radius: 0px !important;
-                }
-            }
-            // Dropdown Menu button Padding None
-            .slicknav_item a {
-                padding: 0 !important;
-            }
-            .slicknav_arrow {
-                font-size: 9px !important;
-                margin: 0 0 0 0.4em !important;
-                color: #fff !important;
-                display: inline-block !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                position: relative !important;
-                top: -1px !important;
-            }
-        }
     }
 }
+
+// Move slicknav_nav outside the mobile_menu nesting
+.slicknav_nav {
+    margin-top: 0 !important;
+    background: #000 !important;
+    border: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: -300px !important;
+    width: 300px !important;
+    height: 100vh !important;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 80px 20px 20px !important;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1) !important;
+    overflow-y: auto !important;
+    display: block !important;
+    opacity: 0.9;
+    z-index: 5;
+
+    &.slicknav_open {
+        right: 0 !important;
+    }
+}
+
+// Update overlay styles to work as child of mobile_menu
+.mobile_menu {
+    .slicknav_overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+        cursor: pointer;
+    }
+}
+
+// When menu is open, show overlay
+body.slicknav_open .slicknav_overlay {
+    display: block;
+}
+
 // Header Right Btn
 .header-right-btn {
 	@media #{$md}{

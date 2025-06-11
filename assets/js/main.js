@@ -37,12 +37,13 @@
 // mobile_menu
     var menu = $('nav ul#navigation');
     if(menu.length){
+      // Add overlay element to mobile_menu instead of body
+      $('.mobile_menu').append('<div class="slicknav_overlay"></div>');
+      
       menu.slicknav({
         prependTo: ".mobile_menu",
         closedSymbol: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="9" height="9" fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>',
         openedSymbol: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="9" height="9" fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>',
-        // closedSymbol: '+',
-        // openedSymbol: '-',
         label: '',
         removeIds: true,
         allowParentLinks: true,
@@ -65,6 +66,13 @@
           // Toggle the clicked submenu
           $(trigger).parent().toggleClass('slicknav_open');
         }
+      });
+
+      // Handle overlay click
+      $(document).on('click', '.slicknav_overlay', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.slicknav_btn').click();
       });
     };
 
