@@ -323,11 +323,11 @@
     opacity: 0.9;
     z-index: 5;
 
-    // Override font sizes
+    // Base font size for all menu items
     font-size: 1em !important;
     
     a {
-        font-size: 1.2em !important;
+        font-size: 1em !important;
         padding-top: 0.6em !important;
         padding-bottom: 0.6em !important;
         position: relative !important;
@@ -338,7 +338,7 @@
     .slicknav_row,
     .slicknav_item {
         a {
-            font-size: 1.2em !important;
+            font-size: 1em !important;
             padding-top: 0.6em !important;
             padding-bottom: 0.6em !important;
         }
@@ -347,7 +347,7 @@
     // Submenu items
     ul {
         a {
-            font-size: 1.2em !important;
+            font-size: 1em !important;
             padding-top: 0.5em !important;
             padding-bottom: 0.5em !important;
         }
