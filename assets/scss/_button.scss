@@ -74,7 +74,7 @@
 	text-transform: uppercase !important;
 	border-radius: 0px;
 	font-size: 16px !important;
-	font-weight: 600 !important;
+	font-weight: 400 !important;
 	display: inline-block !important;
 	cursor: pointer;
 	color: #fff !important;
@@ -141,7 +141,7 @@
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: 1px;
 	position: relative;
 	transition: color 0.4s linear;
@@ -247,7 +247,7 @@
 .header-btn {
 	color:#fff;
 	font-family: $font_1;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 16px;
 	padding: 0 3px;
 	@media #{$sm}{
@@ -265,7 +265,7 @@
 		padding-right: 6px;
 		transform: rotate(0deg);
 		@include transition(.4s);
-		font-weight: 600;
+		font-weight: 400;
 	}
 	&:hover{
 		color: $theme-color;
@@ -328,7 +328,7 @@
 .slider-btn2 {
 	color: #fff;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 400;
 	text-decoration: underline;
 	padding: 17px 24px;
 	display: inline-block;
@@ -372,7 +372,7 @@
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px !important;
-	font-weight: 500 !important;
+	font-weight: 400 !important;
 	border-radius:35px;
 	line-height: 1;
 
@@ -440,7 +440,7 @@
     background:#fff;
     padding: 25px 36px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: capitalize;
     color: #222222;
 	border-radius: 5px;
@@ -548,7 +548,7 @@
     padding: 12px 44px;
     text-transform: capitalize;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 400;
     background: none;
     &:hover{
         background-color:$btn_bg;
@@ -626,7 +626,7 @@
         display: inline-block;
         line-height: 1;
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 400;
         position: relative;
 		top: 3px;  
 		left: 5px;

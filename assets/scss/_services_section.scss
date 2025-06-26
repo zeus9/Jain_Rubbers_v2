@@ -40,7 +40,7 @@
                 color: $heading-color;
                 @include transition(.2s);
                 font-size: 20px;
-                font-weight: 500;
+                font-weight: 300;
                 margin-bottom: 10px;
                 display: block;
                 text-decoration: underline transparent;
@@ -93,7 +93,7 @@
 
 .browse-btn2 {
 	color: $theme-color !important;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 16px;
 	position: relative;
 	display: inline-block;

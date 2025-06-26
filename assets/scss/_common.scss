@@ -1,9 +1,10 @@
 /* 1. Theme default css */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
 	font-family: $font_2;
-	font-weight: normal;
+	font-weight: 300;
 	font-style: normal;
 	font-size: 16px;
 }
@@ -18,7 +19,7 @@ h6 {
 
 	margin-top: 0px;
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 200;
 	text-transform: normal;
 }
 p {
@@ -28,7 +29,7 @@ p {
 	font-size: 16px;
 	line-height: 30px;
 	margin-bottom: 15px;
-	font-weight: normal;
+	font-weight: 300;
 	line-height: 1.4;
 }
 
@@ -410,7 +411,7 @@ hr {
 	}
 	.pere-text{
 		strong{
-			font-weight: 800;
+			font-weight: 400;
 			color:#dca73a ;
 			text-transform: uppercase;
 		}
@@ -554,7 +555,7 @@ hr {
 	height: 50px;
 	width: 100%;
 	color: #071112;
-	font-weight: 500;
+	font-weight: 400;
 	text-transform: capitalize;
 	padding-top: 10px;
 	border-radius: 25px;
@@ -712,7 +713,7 @@ hr {
 	p{
 		color:#656565;
 		font-size: 18px;
-		font-weight: 400;
+		font-weight: 200;
 		line-height: 1.5;
 		br{
 			@media #{$sm}{
@@ -729,7 +730,7 @@ hr {
 	& > span{
 		color:$theme-color;
 		font-size: 14px;
-		font-weight: 400;
+		font-weight: 200;
 		text-transform: uppercase;
 		display: inline-block;
 		letter-spacing: 0.3em;
@@ -746,7 +747,7 @@ hr {
 		font-family: $font_1;
 		font-size: 40px;
 		display: block;
-		font-weight: 400;
+		font-weight: 200;
 		line-height: 1.2;
 		margin-bottom: 12px;
 		padding-left: 45px;
@@ -808,7 +809,7 @@ hr {
 	h2 {
 		font-size: 44px;
 		display: block;
-		font-weight: 700;
+		font-weight: 200;
 		line-height: 1.4;
 		margin-bottom: 22px;
 
@@ -828,7 +829,7 @@ hr {
 	p{
 		color: $font_color1;
 		font-size: 18px;
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 1.5;
 
 		a{
