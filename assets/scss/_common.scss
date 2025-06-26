@@ -5,6 +5,7 @@
 body {
 	font-family: $font_2;
 	font-weight: 300;
+	font-weight: 300;
 	font-style: normal;
 	font-size: 16px;
 }
@@ -20,6 +21,7 @@ h6 {
 	margin-top: 0px;
 	font-style: normal;
 	font-weight: 200;
+	font-weight: 200;
 	text-transform: normal;
 }
 p {
@@ -29,6 +31,7 @@ p {
 	font-size: 16px;
 	line-height: 30px;
 	margin-bottom: 15px;
+	font-weight: 300;
 	font-weight: 300;
 	line-height: 1.4;
 }
@@ -412,6 +415,7 @@ hr {
 	.pere-text{
 		strong{
 			font-weight: 400;
+			font-weight: 400;
 			color:#dca73a ;
 			text-transform: uppercase;
 		}
@@ -555,6 +559,7 @@ hr {
 	height: 50px;
 	width: 100%;
 	color: #071112;
+	font-weight: 400;
 	font-weight: 400;
 	text-transform: capitalize;
 	padding-top: 10px;
@@ -714,6 +719,7 @@ hr {
 		color:#656565;
 		font-size: 18px;
 		font-weight: 200;
+		font-weight: 200;
 		line-height: 1.5;
 		br{
 			@media #{$sm}{
@@ -731,6 +737,7 @@ hr {
 		color:$theme-color;
 		font-size: 14px;
 		font-weight: 200;
+		font-weight: 200;
 		text-transform: uppercase;
 		display: inline-block;
 		letter-spacing: 0.3em;
@@ -747,6 +754,7 @@ hr {
 		font-family: $font_1;
 		font-size: 40px;
 		display: block;
+		font-weight: 200;
 		font-weight: 200;
 		line-height: 1.2;
 		margin-bottom: 12px;
@@ -810,6 +818,7 @@ hr {
 		font-size: 44px;
 		display: block;
 		font-weight: 200;
+		font-weight: 200;
 		line-height: 1.4;
 		margin-bottom: 22px;
 
@@ -829,6 +838,7 @@ hr {
 	p{
 		color: $font_color1;
 		font-size: 18px;
+		font-weight: 300;
 		font-weight: 300;
 		line-height: 1.5;
 
