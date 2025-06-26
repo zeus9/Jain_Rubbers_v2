@@ -10,7 +10,7 @@
                     margin-right: 30px;
                     padding: 13px 15px 12px 15px;
                     font-size: 14px;
-                    font-weight: 400;
+                    font-weight: 300;
                     position: relative;
                     &:last-child{
                         margin-right: 0;
@@ -101,7 +101,7 @@
                 a{
                     font-family: $font_2;
                     color: #fff;
-                    font-weight: 400;
+                    font-weight: 300;
                     padding: 21px 7px;
                     display: block;
                     font-size: 16px;
@@ -163,7 +163,7 @@
                         padding: 6px 10px !important;
                         font-size: 16px;
                         color: #1D2547;
-                        font-weight: 700;
+                        font-weight: 300;
                         text-transform: capitalize;
                         &::before{
                             position: unset;
@@ -428,7 +428,7 @@ body.slicknav_open .slicknav_overlay {
         color: #fff !important;
         display: inline-block !important;
         font-size: 18px !important;
-        font-weight: 500 !important;
+        font-weight: 300 !important;
         background: $btn_bg;
         border-radius: 0px;
         position: relative;
