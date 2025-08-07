@@ -12,34 +12,36 @@
     }
     .single-cat{
         @include transition(.4s);
-        background:#fff;
+        // background:#fff;
+        background: $section_bg1;
         padding: 30px 20px 25px 20px;
         position: relative;
         z-index: 1;
         border-radius: 5px;
-        &::before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 0;
-            background:#fdfdfd;
-            transition: .6s;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            border-radius: 5px;
-        }
+        // &::before {
+        //     position: absolute;
+        //     content: "";
+        //     width: 100%;
+        //     height: 0;
+        //     background:#fdfdfd;
+        //     transition: .6s;
+        //     bottom: 0;
+        //     left: 0;
+        //     z-index: -1;
+        //     border-radius: 5px;
+        // }
         .cat-icon{
             margin-bottom: 25px;
             img{
-
+                width: 50px;
+                height: 50px;
             }
         }
         .cat-cap{
             h5{
                 color: $heading-color;
                 @include transition(.2s);
-                font-size: 20px;
+                font-size: 24px;
                 font-weight: 300;
                 margin-bottom: 10px;
                 display: block;
@@ -52,11 +54,12 @@
                 }
             }
             p{
-                margin-bottom: 36px;
-                color: #66816A;
-                font-size: 16px;
+                // margin-bottom: 36px;
+                margin-top: 24px;
+                color: $font_color2;
+                font-size: 18px;
                 @include transition(.2s);
-                margin: 0;
+                // margin: 0;
                 @media #{$sm}{
                     font-size: 15px;
 
@@ -71,7 +74,7 @@
 
         // Hover Effect In single 
         &:hover{
-            -webkit-box-shadow: 0 20px 30px rgba(35, 47, 85,.1);
+            // -webkit-box-shadow: 0 20px 30px rgba(35, 47, 85,.1);
             &::before {
                 height: 100%;
             }

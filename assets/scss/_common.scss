@@ -5,7 +5,6 @@
 body {
 	font-family: $font_2;
 	font-weight: 300;
-	font-weight: 300;
 	font-style: normal;
 	font-size: 16px;
 }
@@ -20,8 +19,7 @@ h6 {
 
 	margin-top: 0px;
 	font-style: normal;
-	font-weight: 200;
-	font-weight: 200;
+	font-weight: 300;
 	text-transform: normal;
 }
 p {
@@ -31,7 +29,6 @@ p {
 	font-size: 16px;
 	line-height: 30px;
 	margin-bottom: 15px;
-	font-weight: 300;
 	font-weight: 300;
 	line-height: 1.4;
 }
@@ -415,7 +412,6 @@ hr {
 	.pere-text{
 		strong{
 			font-weight: 400;
-			font-weight: 400;
 			color:#dca73a ;
 			text-transform: uppercase;
 		}
@@ -559,7 +555,6 @@ hr {
 	height: 50px;
 	width: 100%;
 	color: #071112;
-	font-weight: 400;
 	font-weight: 400;
 	text-transform: capitalize;
 	padding-top: 10px;
@@ -719,7 +714,6 @@ hr {
 		color:#656565;
 		font-size: 18px;
 		font-weight: 200;
-		font-weight: 200;
 		line-height: 1.5;
 		br{
 			@media #{$sm}{
@@ -754,8 +748,7 @@ hr {
 		font-family: $font_1;
 		font-size: 40px;
 		display: block;
-		font-weight: 200;
-		font-weight: 200;
+		font-weight: 250;
 		line-height: 1.2;
 		margin-bottom: 12px;
 		padding-left: 45px;
@@ -818,7 +811,6 @@ hr {
 		font-size: 44px;
 		display: block;
 		font-weight: 200;
-		font-weight: 200;
 		line-height: 1.4;
 		margin-bottom: 22px;
 
@@ -839,7 +831,6 @@ hr {
 		color: $font_color1;
 		font-size: 18px;
 		font-weight: 300;
-		font-weight: 300;
 		line-height: 1.5;
 
 		a{
@@ -857,4 +848,36 @@ hr {
 .section-img-bg2{
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
+}
+
+// Brand container with flexbox for proper centering
+.brand-active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 120px;
+  gap: 2rem;
+}
+
+// Individual brand containers with vertical centering
+.brand-active .single-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0 2rem;
+  flex: 0 0 auto;
+}
+
+// Brand logo images - preserve individual heights but ensure proper centering
+// Also applies to .client-logo-fit for consistency
+.brand-active .single-brand img,
+.client-logo-fit {
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }

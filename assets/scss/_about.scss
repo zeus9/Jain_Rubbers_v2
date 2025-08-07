@@ -1,4 +1,15 @@
 .about-low-area{
+    padding-top: 100px;
+    padding-bottom: 70px;
+    @media #{$sm}{
+        padding-top: 60px;
+        padding-bottom: 39px;
+    }
+    @media #{$xs}{
+        padding-top: 60px;
+        padding-bottom: 39px;
+    }
+    
     position: relative;
     &.about-low-area2{
         &::before{
@@ -22,7 +33,7 @@
 		}
         p.about-cap-top{
             font-size: 18px;
-            color: #545454;
+            color: $font_color2;
             line-height: 1.6;
             margin-bottom: 29px;
             font-weight: 300;
