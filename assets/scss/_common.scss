@@ -850,6 +850,28 @@ hr {
 	background-repeat: no-repeat !important;
 }
 
+// Full-bleed brand strip: strip Bootstrap container / row / col horizontal padding
+.brand-area {
+	.container-fluid,
+	.container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.row {
+		--bs-gutter-x: 0;
+		--bs-gutter-y: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	[class^="col-"],
+	[class*=" col-"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 // Brand container with flexbox for proper centering
 .brand-active {
   display: flex;
@@ -880,4 +902,5 @@ hr {
   display: block;
   margin: 0 auto;
   max-width: 100%;
+  filter: grayscale(100%);
 }

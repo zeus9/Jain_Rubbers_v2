@@ -22,6 +22,10 @@
             font-weight: 400;
         }
         ul{
+            // Widen past column when needed so contact / nav links stay on one line
+            &:not(.footer-social){
+                min-width: max-content;
+            }
             li{
                 margin-bottom: 15px;
                  a{
@@ -29,6 +33,7 @@
                     font-weight: 300;
                     font-size: 16px;
                     text-decoration: underline transparent;
+                    white-space: nowrap;
                     &:hover{
                         color:#5E5E5E;
                         text-decoration: underline;
@@ -156,10 +161,10 @@
 }
 .number a {
     font-family: $font_1;
-	font-size: 24px !important;
+	font-size: 18px !important;
 	color:$theme-color !important;
     margin-bottom: 0px;
-    font-weight: 500 !important;
+    font-weight: 300 !important;
     display: block;
     @media #{$md}{
         font-size: 19px !important;

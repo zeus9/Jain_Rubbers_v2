@@ -237,6 +237,7 @@
     dots: false,
     infinite: true,
     autoplay: true,
+    autoplaySpeed: 1500,
     speed: 400,
     arrows: false,
     variableWidth: true,

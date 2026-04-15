@@ -3,6 +3,8 @@
          img{
             width: 100%;
             height: 517px;
+            display: block;
+            object-fit: cover;
             @media #{$lg}{
                 height: 350px;
             }
