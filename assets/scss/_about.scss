@@ -1,13 +1,13 @@
 .about-low-area{
     padding-top: 100px;
-    padding-bottom: 70px;
+    // padding-bottom: 70px;
     @media #{$sm}{
         padding-top: 60px;
-        padding-bottom: 39px;
+        // padding-bottom: 39px;
     }
     @media #{$xs}{
         padding-top: 60px;
-        padding-bottom: 39px;
+        // padding-bottom: 39px;
     }
     
     position: relative;
