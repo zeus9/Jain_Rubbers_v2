@@ -7,19 +7,20 @@
 }
 // Another Page
 .slider-height2{
-    height: 350px;
+    // height: 10rem;
     background-repeat:no-repeat ;
     background-position: center center;
     background-size: cover;
-    @media #{$md}{
-        height: 270px
-    }
-    @media #{$sm}{
-        height: 250px;
-    }
-    @media #{$xs}{
-        height: 250px;
-    }
+    height: auto;
+    // @media #{$md}{
+    //     height: 10rem;
+    // }
+    // @media #{$sm}{
+    //     height: 7rem;
+    // }
+    // @media #{$xs}{
+    //     height: 7rem;
+    // }
 }
 
 
@@ -135,18 +136,20 @@
             h2{
                 
                 color:#fff;
-                font-size: 50px;
+                font-size: 2.3rem;
                 display: block;
                 font-weight: 300;
                 line-height: 1.4;
+                margin-bottom: 2rem;
                 @media #{$md}{
-                    font-size: 50px;
+                    font-size: 2.3rem;
                 }
                 @media #{$sm}{
-                    margin-bottom: 20px;
+                    font-size: 2rem;
+                    margin-bottom: 2.5rem;
                 }
                 @media #{$xs}{
-                    font-size: 40px;
+                    font-size: 1.5rem;
                 }
             }
             p{
