@@ -68,6 +68,10 @@
         }
     }
     .header-bottom{
+        // Anchor absolute-positioned `.mobile_menu` inside the navbar row
+        .container{
+            position: relative;
+        }
 
         // mobile menu show
         @media #{$md}{
@@ -219,7 +223,6 @@
     z-index: 9;
 }
 
-
 //! header Sticky  & Responsive
 .header-area{
     .header-sticky{
@@ -244,20 +247,29 @@
 //! Mobile Menu
 .mobile_menu {
     position: absolute;
+    top: 0;
+    bottom: 0;
     right: 0px;
-    width: 100%;
+    width: auto;
     z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     .slicknav_menu {
         background: transparent !important;
         margin-top: 0px !important;
+        height: 100%;
+        display: flex;
+        align-items: center;
         .slicknav_btn {
-            top: -39px;
+            top: 0;
             right: 0;
             padding: 10px 30px;
             background: transparent !important;
             display: inline-block;
             z-index: 6;
             position: relative;
+            margin: 0;
             &::before {
                 content: "";
                 position: absolute;
@@ -292,25 +304,27 @@
                 width: 25px !important;
                 margin: 0px 0px !important;
                 position: absolute;
-                left: 0;
-                right: 0;
+                left: 50%;
+                right: auto;
                 transition: all 0.3s ease-in-out;
-                &:nth-child(1) { top: 0; }
-                &:nth-child(2) { top: 9px; }
-                &:nth-child(3) { top: 18px; }
+                top: 50%;
+                // Middle bar centered; other two symmetric around it
+                &:nth-of-type(1) { transform: translateX(-50%) translateY(calc(-50% - 9px)); }
+                &:nth-of-type(2) { transform: translateX(-50%) translateY(-50%); }
+                &:nth-of-type(3) { transform: translateX(-50%) translateY(calc(-50% + 9px)); }
             }
 
             // Animation classes for cross
             &.slicknav_open {
                 .slicknav_icon-bar {
-                    &:nth-child(1) {
-                        transform: translateY(9px) rotate(45deg);
+                    &:nth-of-type(1) {
+                        transform: translateX(-50%) translateY(-50%) rotate(45deg);
                     }
-                    &:nth-child(2) {
+                    &:nth-of-type(2) {
                         opacity: 0;
                     }
-                    &:nth-child(3) {
-                        transform: translateY(-9px) rotate(-45deg);
+                    &:nth-of-type(3) {
+                        transform: translateX(-50%) translateY(-50%) rotate(-45deg);
                     }
                 }
             }
