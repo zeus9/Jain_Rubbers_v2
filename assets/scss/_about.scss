@@ -10,6 +10,11 @@
         // padding-bottom: 39px;
     }
     
+    // About section: keep columns top-aligned with heading
+    .row.align-items-center{
+        align-items: flex-start !important;
+    }    
+    
     position: relative;
     &.about-low-area2{
         &::before{

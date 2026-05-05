@@ -366,6 +366,45 @@ testimonial.slick({
       });
     }
 
+// 12.1 Autoplay inline videos when in view (once)
+    (function initAutoplayOnViewVideos() {
+      function run() {
+        var videos = document.querySelectorAll('video[data-autoplay-on-view="true"]');
+        if (!videos.length) return;
+
+        // Fallback: best-effort autoplay without scroll detection.
+        if (!("IntersectionObserver" in window)) {
+          videos.forEach(function (v) {
+            v.play().catch(function () {});
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              var v = entry.target;
+              v.play().catch(function () {});
+              // Once started, keep it playing even after leaving viewport.
+              observer.unobserve(v);
+            });
+          },
+          { threshold: 0.35 }
+        );
+
+        videos.forEach(function (v) {
+          observer.observe(v);
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", run);
+      } else {
+        run();
+      }
+    })();
+
 /* 13. counterUp*/
     $('.counter').counterUp({
       delay: 10,
