@@ -23,13 +23,19 @@
     .about-caption{
         padding-left: 50px;
 		@media #{$md}{
-			padding-top: 50px;
+			// padding-top: 50px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
 		}
 		@media #{$sm}{
 			padding-top: 50px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
 		}
 		@media #{$xs}{
 			padding-top: 20px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
 		}
         p.about-cap-top{
             font-size: 18px;

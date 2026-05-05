@@ -705,10 +705,10 @@ hr {
 .section-tittle{
 	position: relative;
 	@media #{$sm}{
-		margin-bottom: 50px;
+		margin-bottom: 1rem;
 	}
 	@media #{$xs}{
-		margin-bottom: 50px;
+		margin-bottom: 1rem;
 	}
 	p{
 		color:#656565;
@@ -763,10 +763,13 @@ hr {
 			font-size: 40px;
 		}
 		@media #{$sm}{
-			font-size: 31px;
+			// font-size: 31px;
+			font-size: 2rem;
+			font-weight: 350;
 		}
 		@media #{$xs}{
-			font-size: 24px;
+			font-size: 1.8rem;
+			font-weight: 350;;
 
 		}
 		br{
@@ -793,6 +796,12 @@ hr {
 		h2{
 			padding-left: 0px;
 		}
+		// @media #{$sm}{
+		// 	text-align: left;
+		// }
+		// @media #{$xs}{	
+		// 	text-align: left;
+		// }
 		span{
 			left: -136px;
 			top: 60px;
