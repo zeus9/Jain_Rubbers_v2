@@ -9,7 +9,7 @@
         padding-top: 60px;
         // padding-bottom: 39px;
     }
-    
+
     // About section: keep columns top-aligned with heading
     .row.align-items-center{
         align-items: flex-start !important;
@@ -172,9 +172,107 @@
 	}
 }
 
+// "What we do" as a left-aligned overlay card on a background image
+.jr-what-we-do{
+    // Keep the background visible above/below the card
+    padding: 90px 0 0px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media #{$xs}{
+        padding: 0 !important;
+    }
+
+    .jr-what-we-do-mobile-image{
+        display: none !important;
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    // Remove Bootstrap container/column gutters so the card can sit flush-left
+    > .container{
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    > .container > .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .col-xl-8,
+    .col-lg-10,
+    .col-md-11{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .single-emargency{
+        margin: 0 !important;
+        width: 50vw;
+        max-width: 720px;
+        padding: 70px 60px;
+
+        @media #{$md}{
+            // width: 100%;
+            max-width: none;
+            padding: 50px 40px;
+        }
+        @media #{$sm}{
+            width: 70vw;
+            max-width: none;
+            padding: 40px 30px;
+        }
+        @media #{$xs}{
+            width: 100%;
+            max-width: none;
+            padding: 35px 24px;
+        }
+
+        // Emergency-care was designed as a right-side panel with a huge backdrop.
+        // For this section we want a self-contained card on the left.
+        &::before{
+            left: 0;
+            width: 100%;
+            background-color: rgba(239, 253, 255, 0.92);
+        }
+    }
+
+    .emargency-cap{
+        h2{
+            margin-top: 18px;
+        }
+        p.about-cap-top{
+            color: $font_color2;
+        }
+    }
+
+    @media #{$xs}{
+        background-image: none !important;
+        padding-bottom: 0;
+
+        .single-emargency{
+            width: 100%;
+        }
+
+        .jr-what-we-do-mobile-image{
+            display: block !important;
+            margin-top: 20px;
+        }
+    }
+}
+
 // Video Area 
 .video-area{
     height: 710px;
+    position: relative;
+    overflow: hidden;
+    // Bootstrap's `align-items-center` utility uses `!important`,
+    // so we must also use `!important` to ensure top alignment.
+    align-items: flex-start !important;
+
     @media #{$lg}{
         height: 700px;
     }
@@ -186,6 +284,33 @@
     }
     @media #{$xs}{
         height: 300px;
+    }
+
+    // Inline embedded video (replaces popup icon)
+    .jr-video-embed{
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .jr-inline-video{
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover; // fill the entire video area (crop/zoom if needed)
+        // Crop ~30px from the top by shifting the content upward.
+        object-position: center -30px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .container,
+    .video-wrap{
+        height: 100%;
     }
     // Video icon
     .video-icon{
