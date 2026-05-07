@@ -850,15 +850,11 @@
                     border-bottom: 0;
                 }
 
-                a {
-                    font-size: 14px;
-                    line-height: 20px;
-                    color: #888888;
-
                     p {
                         margin-bottom: 0px;
+                        color: $font_color2 !important;
                     }
-                }
+                
 
                 &+li {
                     padding-top: 15px;
