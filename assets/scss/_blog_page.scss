@@ -744,7 +744,8 @@
     }
 
     .single_sidebar_widget {
-        background: #fbf9ff;
+        // background: #fbf9ff;
+        background: $white_color;
         padding: 30px;
         margin-bottom: 30px;
         .btn_1{
@@ -845,13 +846,19 @@
                 border-bottom: 1px solid #f0e9ff;
                 transition: all 0.3s ease 0s;
                 padding-bottom: 12px;
+                display: flex;
+                align-items: start;
 
                 &:last-child {
                     border-bottom: 0;
                 }
 
+                img {
+                    flex-shrink: 0;
+                }
+
                     p {
-                        margin-bottom: 0px;
+                        margin: 0;
                         color: $font_color2 !important;
                     }
                 
