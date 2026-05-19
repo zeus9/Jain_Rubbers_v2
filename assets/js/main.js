@@ -352,8 +352,33 @@ testimonial.slick({
       if(popUp.length){
         popUp.magnificPopup({
           type: 'image',
-          gallery:{
-            enabled:true
+          mainClass: 'mfp-with-zoom mfp-gallery',
+          gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1],
+            arrowMarkup:
+              '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%">' +
+              '<img src="assets/img/icon/chevron-%dir%-solid-full.svg" alt="" class="mfp-gallery-nav__icon" width="24" height="24">' +
+              '</button>',
+            tPrev: 'Previous',
+            tNext: 'Next',
+            tCounter: '<span class="mfp-counter">%curr% of %total%</span>'
+          },
+          zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out',
+            opener: function (openerElement) {
+              if (openerElement.is('img')) {
+                return openerElement;
+              }
+              var thumb = openerElement.find('.single-gallery-image');
+              return thumb.length ? thumb : openerElement;
+            }
+          },
+          image: {
+            verticalFit: true
           }
         });
       }

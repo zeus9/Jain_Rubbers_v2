@@ -412,7 +412,29 @@ del {
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: cover !important;
-    height: 200px;
+    height: 300px;
+}
+
+// Product / page gallery grid (e.g. infra_defence.html, elements.html)
+.gallery-item {
+    .single-gallery-item {
+        margin-top: 30px;
+    }
+
+    .single-gallery-item .single-gallery-image {
+        margin-top: 0;
+    }
+
+    .single-gallery-caption {
+        margin: 0 0 0.5rem 0;
+        padding: 0 8px;
+        font-family: $font_2;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.4;
+        color: $font_color2;
+        text-align: center;
+    }
 }
 
 .list-style {
