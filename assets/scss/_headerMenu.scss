@@ -95,6 +95,7 @@
                 display: inline-block;
                 position: relative;
                 z-index: 1;
+                color: #fff;
                 margin: 0px 14px;
                 &:last-child{
                     margin:0;
@@ -128,14 +129,38 @@
                         @include transition(.4s);
                     }
                 }
+                &:not(:has(> a)):not(:has(> .header-right-btn)){
+                    font-family: $font_2;
+                    font-weight: 300;
+                    padding: 21px 7px;
+                    // text-transform: capitalize;
+                    cursor: pointer;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        bottom: 10px;
+                        right: 5px;
+                        left: -5px;
+                        height: 2px;
+                        z-index: 1;
+                        background:#fff;
+                        @include transition(.4s);
+                    }
+                    &:hover{
+                        font-weight: 400;
+                    }
+                }
+                &:has(> .header-right-btn){
+                    padding: 0;
+                }
                 &:hover{
                     & > a{
                         color:#fff;
+                        font-weight: 400;
                         &::before{
-                            left: 0;
-                            right: auto;
-                            width: 100%;
-                            @include transition(.4s);
+                            width: 0;
                         }
                     }
                 }
@@ -398,6 +423,18 @@
     }
 }
 
+// Ensure header button keeps square edges in mobile nav (no rounded corners on hover)
+.slicknav_nav .header-btn,
+.slicknav_nav .header-right-btn .header-btn,
+.mobile_menu .slicknav_nav .header-btn {
+    border-radius: 0 !important;
+}
+.slicknav_nav .header-btn:hover,
+.slicknav_nav .header-right-btn .header-btn:hover,
+.mobile_menu .slicknav_nav .header-btn:hover {
+    border-radius: 0 !important;
+}
+
 // Update overlay styles to work as child of mobile_menu
 .mobile_menu {
     .slicknav_overlay {
@@ -436,7 +473,7 @@ body.slicknav_open .slicknav_overlay {
     .header-btn {
         font-family: $font_2;
         border: none;
-        padding: 21px 21px !important;
+        padding: 19px 21px !important; // 19 and not 21 cos font size is 18 for button, so submenus can render below the button 
         text-transform: capitalize !important;
         cursor: pointer;
         color: #fff !important;
@@ -447,16 +484,7 @@ body.slicknav_open .slicknav_overlay {
         border-radius: 0px;
         position: relative;
         &:hover{
-            color: #f2f2f2 !important;
-            @media #{$md}{
-                background: $btn_bg !important;
-            }
-            @media #{$sm}{
-                background: $btn_bg !important;
-            }
-            @media #{$xs}{
-                background: $btn_bg !important;
-            }
+            background-color: $btn_hover_bg !important;
         }
     }
 }
