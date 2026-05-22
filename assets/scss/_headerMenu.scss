@@ -72,7 +72,9 @@
         .container{
             position: relative;
         }
-
+        @media #{$nav_breakpoint}{
+            padding: 10px 20px;
+        }   
         // mobile menu show
         @media #{$md}{
             padding: 10px 20px;
@@ -164,6 +166,12 @@
                         }
                     }
                 }
+                &.active {
+                        font-weight: 400 !important;
+                        > a{
+                            font-weight: 400 !important;
+                        }
+                }
             }
             ul.submenu{
                 position: absolute;
@@ -215,6 +223,9 @@
         img{
             max-width: 250px;
             height: auto;
+            @media #{$nav_breakpoint}{
+                max-width: 150px;
+            }
             @media #{$md}{
                 max-width: 150px;
             }
@@ -493,6 +504,48 @@ body.slicknav_open .slicknav_overlay {
 #navigation {
 	display: flex;
 	align-items: center;
+}
+
+// Collapse desktop menu to mobile at <= 1300px
+.main-header .main-menu {
+  display: block;
+}
+
+.main-header .mobile_menu {
+  display: none;
+}
+
+
+@media (max-width: 1300px) {
+	.main-header .main-menu {
+		display: none !important;
+	}
+
+	.main-header .mobile_menu {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: flex-end !important;
+	}
+
+	.main-header .mobile_menu .slicknav_menu {
+		display: flex !important;
+		align-items: center !important;
+	}
+
+	#navigation {
+		flex-wrap: nowrap;
+	}
+}
+
+// Show desktop, hide mobile above 1300px
+@media (min-width: 1301px) {
+	.main-header .main-menu {
+		display: block;
+	}
+
+	.main-header .mobile_menu {
+		display: none;
+	}
 }
 
 

@@ -448,6 +448,34 @@ testimonial.slick({
     });
   });
 
+  //14. active class added to li item on section navigation
+  $(window).on('scroll', function () {
+    var scrollPos = $(document).scrollTop();
+
+    // Loop through each section that has an ID
+    $('section[id]').each(function () {
+        var currSection = $(this);
+        var sectionTop = currSection.offset().top - 100; // 100px offset for fixed/sticky headers
+        var sectionBottom = sectionTop + currSection.outerHeight();
+
+        // Check if the current scroll position rests inside this section
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            var id = currSection.attr('id');
+            var matchingLink = $('#navigation a[href*="' + id + '"]');
+
+            // Remove active class from all menu li elements
+            $('#navigation li').removeClass('active');
+            
+            // Add active class to the parent li of the visible section's link
+            matchingLink.closest('li').addClass('active');
+            
+            // Also add active to the parent item if it's nested in a submenu
+            matchingLink.closest('.submenu').closest('li').addClass('active');
+        }
+    });
+});
+
+
 
 
 
