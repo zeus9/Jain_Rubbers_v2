@@ -238,16 +238,31 @@
         }
     }
 }
-// Hover Show Sub-menu
-.main-header ul > li:hover > ul.submenu {
+// Open submenu (hover on pointer devices, .submenu-open on tap — see main.js)
+@mixin nav-submenu-visible {
     visibility: visible;
     opacity: 1;
     padding: 17px 0;
     max-height: 500px;
+
     & > li {
         opacity: 1;
         transform: translateY(0);
         transition-delay: 0.1s;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .main-header ul > li:hover > ul.submenu {
+        @include nav-submenu-visible;
+    }
+}
+
+.main-header ul > li.submenu-open {
+    z-index: 2;
+
+    & > ul.submenu {
+        @include nav-submenu-visible;
     }
 }
     

@@ -74,6 +74,69 @@
         e.stopPropagation();
         $('.slicknav_btn').click();
       });
+
+      // Desktop main menu: tap to toggle submenus (hover alone fails on touch)
+      var desktopNavMq = window.matchMedia('(min-width: 1301px)');
+
+      function isDesktopMainMenu() {
+        return desktopNavMq.matches && $('.main-header .main-menu').is(':visible');
+      }
+
+      function closeDesktopSubmenus() {
+        menu.children('li').removeClass('submenu-open');
+      }
+
+      // Close tap-opened submenu when pointer moves to another top-level item
+      menu.on('mouseenter', '> li', function () {
+        if (!isDesktopMainMenu()) {
+          return;
+        }
+        var $li = $(this);
+        menu.children('li').not($li).removeClass('submenu-open');
+      });
+
+      menu.on('click', '> li', function (e) {
+        if (!isDesktopMainMenu()) {
+          return;
+        }
+
+        var $li = $(this);
+        var $submenu = $li.children('ul.submenu');
+
+        if (!$submenu.length) {
+          closeDesktopSubmenus();
+          return;
+        }
+
+        if ($(e.target).closest('ul.submenu a').length) {
+          return;
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        var willOpen = !$li.hasClass('submenu-open');
+        closeDesktopSubmenus();
+        if (willOpen) {
+          $li.addClass('submenu-open');
+        }
+      });
+
+      $(document).on('click', function (e) {
+        if (!isDesktopMainMenu()) {
+          return;
+        }
+        if ($(e.target).closest('.main-header .main-menu #navigation').length) {
+          return;
+        }
+        closeDesktopSubmenus();
+      });
+
+      if (typeof desktopNavMq.addEventListener === 'function') {
+        desktopNavMq.addEventListener('change', closeDesktopSubmenus);
+      } else if (typeof desktopNavMq.addListener === 'function') {
+        desktopNavMq.addListener(closeDesktopSubmenus);
+      }
     };
 
 
