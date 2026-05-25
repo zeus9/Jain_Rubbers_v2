@@ -36,18 +36,18 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li class="active"><a href="medical_product.html">Injection Site</a></li>
-                                            <li><a href="rubber_discs.html">Discs</a></li>
+                                            <li class="active"><a href="medical_product.html?product=injection_site">Injection Site</a></li>
+                                            <li><a href="medical_product.html?product=rubber_discs">Discs</a></li>
                                             <li>Stoppers
                                                 <ul class="submenu">
-                                                    <li><a href="stoppers_injection_site.html">For Injection Site</a></li>
-                                                    <li><a href="bctp_stoppers.html">For Blood Collection Tubes</a></li>
+                                                    <li><a href="medical_product.html?product=stoppers_injection_site">For Injection Site</a></li>
+                                                    <li><a href="medical_product.html?product=bctp_stoppers">For Blood Collection Tubes</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="closures.html">Closures</a></li>
+                                            <li><a href="medical_product.html?product=closures">Closures</a></li>
                                             <li>More..
                                                 <ul class="submenu">
-                                                    <li><a href="gaskets.html">Gaskets</a></li>
+                                                    <li><a href="medical_product.html?product=gaskets">Gaskets</a></li>
                                                     <li><a href="infra_defence.html">Infrastructure &amp; Defence Components</a></li>
                                                 </ul>
                                             </li>
@@ -125,7 +125,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb is-active" data-index="0" aria-label="Rubber Bulbs / Injection Site">
+                                <button type="button" class="single-location medical-product-thumb is-active" data-index="0" data-slug="injection_site" aria-label="Rubber Bulbs / Injection Site">
                                     <img src="assets/img/gallery/injection_site_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Rubber Bulbs/Injection Site</h3>
@@ -133,7 +133,7 @@
                                 </button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb" data-index="1" aria-label="Discs for Volumetric Sets">
+                                <button type="button" class="single-location medical-product-thumb" data-index="1" data-slug="rubber_discs" aria-label="Discs for Volumetric Sets">
                                     <img src="assets/img/gallery/discs_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Discs for Volumetric Sets</h3>
@@ -141,7 +141,7 @@
                                 </button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb" data-index="2" aria-label="Injection Site Stoppers and Plugs">
+                                <button type="button" class="single-location medical-product-thumb" data-index="2" data-slug="stoppers_injection_site" aria-label="Injection Site Stoppers and Plugs">
                                     <img src="assets/img/gallery/stoppers_injection_site_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Injection Site Stoppers &amp; Plugs</h3>
@@ -149,7 +149,7 @@
                                 </button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb" data-index="3" aria-label="Blood Collection Tubes Stoppers and Plugs">
+                                <button type="button" class="single-location medical-product-thumb" data-index="3" data-slug="bctp_stoppers" aria-label="Blood Collection Tubes Stoppers and Plugs">
                                     <img src="assets/img/gallery/bctp_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Blood Collection Tubes Stoppers &amp; Plugs</h3>
@@ -157,7 +157,7 @@
                                 </button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb" data-index="4" aria-label="Pharmaceutical Rubber Closures">
+                                <button type="button" class="single-location medical-product-thumb" data-index="4" data-slug="closures" aria-label="Pharmaceutical Rubber Closures">
                                     <img src="assets/img/gallery/closures_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Pharmaceutical Rubber Closures</h3>
@@ -165,7 +165,7 @@
                                 </button>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 p-0">
-                                <button type="button" class="single-location medical-product-thumb" data-index="5" aria-label="Gaskets for Disposable Syringes">
+                                <button type="button" class="single-location medical-product-thumb" data-index="5" data-slug="gaskets" aria-label="Gaskets for Disposable Syringes">
                                     <img src="assets/img/gallery/gaskets_bunch.jpg" alt="">
                                     <div class="guest-contents">
                                         <h3>Gaskets for Disposable Syringes</h3>
@@ -219,7 +219,7 @@
                                 <div class="footer-tittle">
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="medical_product.html">Products</a></li>
+                                        <li><a href="medical_product.html?product=injection_site">Products</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
@@ -272,145 +272,5 @@
     <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script>
-    (function ($) {
-        var checkIcon = 'assets/img/icon/check-solid-full.svg';
-        var checkStyle = 'width:14px;height:14px;margin-right:8px;display:inline-block;vertical-align:middle;';
-
-        var products = [
-            {
-                title: 'Rubber Bulb / Injection Site',
-                image: 'assets/img/gallery/injection_site.jpeg',
-                features: [
-                    'Quick Resealability',
-                    'Excellent Surface Finish',
-                    'Low Needle Penetration Force',
-                    'Chemical Compatibillity of all types of IV fluids',
-                    'Low Extractables and Leachables',
-                    'Lot to Lot Consistency',
-                    'ISO 8871 Compliant',
-                    'Lot Traceability'
-                ]
-            },
-            {
-                title: 'Rubber Discs for Volumetric Sets',
-                image: 'assets/img/gallery/discs.jpg',
-                features: [
-                    'Complete Sealing Performance due to high level of Flatness & Planarity of Center Disc',
-                    'Excellent Surface Smoothness',
-                    'Sterilization Stability',
-                    'Chemical Compatibillity of all types of IV fluids',
-                    'Low Extractables and Leachables',
-                    'Lot to Lot Consistency',
-                    'ISO 8871 Compliant',
-                    'Lot Traceability'
-                ]
-            },
-            {
-                title: 'Injection Site Stoppers & Plugs',
-                image: 'assets/img/gallery/injection_site_stoppers.jpg',
-                features: [
-                    'Excellent Coring Properties',
-                    'Quick Resealability',
-                    'High Level of Dimensional Consistency',
-                    'Chemical Compatibillity of all types of IV fluids',
-                    'Low Extractables and Leachables',
-                    'Low Needle Penetration Force',
-                    'Sterilization Stability',
-                    'ISO 8871 Compliant'
-                ]
-            },
-            {
-                title: 'Blood Collection Tube Stoppers & Plugs',
-                image: 'assets/img/gallery/bctp.jpg',
-                features: [
-                    'Excellent Coring Properties',
-                    'Superior Vacuum Retention Properties',
-                    'Low Needle Penetration Force',
-                    'Rapid Prototyping',
-                    'Low Extractables and Leachables',
-                    'Quality Compatibility with Major Pharmacopoeia Standards',
-                    'Lot Traceability',
-                    'Lot Consistency'
-                ]
-            },
-            {
-                title: 'Pharmaceutical Rubber Closures',
-                image: 'assets/img/gallery/closures.jpg',
-                features: [
-                    'Quick Resealability',
-                    'Excellent Surface Finish',
-                    'Low Needle Penetration Force',
-                    'Chemical Compatibillity of all types of IV fluids',
-                    'Low Extractables and Leachables',
-                    'Lot to Lot Consistency',
-                    'ISO 8871 Compliant',
-                    'Lot Traceability'
-                ]
-            },
-            {
-                title: 'Rubber Gaskets For Disposable Syringes',
-                image: 'assets/img/gallery/gaskets.jpg',
-                features: [
-                    'Smooth Surface Finish for Easy Glide Force',
-                    'High Level of Dimensional Accuracy',
-                    'Lot to Lot Consistency',
-                    'Lot Traceability',
-                    'Superior Ageing Properties',
-                    'Quality Compatibility with Major Pharmacopoeia standards'
-                ]
-            }
-        ];
-
-        var $hero = $('#medical-product-hero-title');
-        var $mainImg = $('#medical-product-main-img');
-        var $mainLink = $('#medical-product-main-link');
-        var $features = $('#medical-product-features');
-        var $thumbs = $('.medical-product-thumb');
-        var index = 0;
-
-        function featureHtml(text) {
-            return '<li><img src="' + checkIcon + '" alt="Check" style="' + checkStyle + '"><p>' + text + '</p></li>';
-        }
-
-        function showProduct(i) {
-            index = (i + products.length) % products.length;
-            var p = products[index];
-            $hero.text(p.title);
-            $mainImg.attr({ src: p.image, alt: p.title });
-            $mainLink.attr('href', p.image);
-            $features.html(p.features.map(featureHtml).join(''));
-            $thumbs.removeClass('is-active').eq(index).addClass('is-active');
-        }
-
-        $('.medical-product-nav--prev').on('click', function () {
-            showProduct(index - 1);
-        });
-
-        $('.medical-product-nav--next').on('click', function () {
-            showProduct(index + 1);
-        });
-
-        $thumbs.on('click', function () {
-            showProduct(parseInt($(this).data('index'), 10));
-        });
-
-        $(document).on('keydown', function (e) {
-            if (e.key === 'ArrowLeft') {
-                showProduct(index - 1);
-            } else if (e.key === 'ArrowRight') {
-                showProduct(index + 1);
-            }
-        });
-
-        var params = new URLSearchParams(window.location.search);
-        var start = parseInt(params.get('p'), 10);
-        if (!isNaN(start) && start >= 0 && start < products.length) {
-            index = start;
-        }
-
-        showProduct(index);
-    })(jQuery);
-    </script>
 </body>
 </html>

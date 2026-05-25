@@ -538,8 +538,193 @@ testimonial.slick({
     });
 });
 
+// Medical product gallery (medical_product.html)
+(function initMedicalProductGallery() {
+  var $app = $('#medical-product-app');
+  if (!$app.length) {
+    return;
+  }
 
+  var checkIcon = 'assets/img/icon/check-solid-full.svg';
+  var checkStyle = 'width:14px;height:14px;margin-right:8px;display:inline-block;vertical-align:middle;';
 
+  var products = [
+    {
+      slug: 'injection_site',
+      title: 'Rubber Bulb / Injection Site',
+      image: 'assets/img/gallery/injection_site.jpeg',
+      features: [
+        'Quick Resealability',
+        'Excellent Surface Finish',
+        'Low Needle Penetration Force',
+        'Chemical Compatibillity of all types of IV fluids',
+        'Low Extractables and Leachables',
+        'Lot to Lot Consistency',
+        'ISO 8871 Compliant',
+        'Lot Traceability'
+      ]
+    },
+    {
+      slug: 'rubber_discs',
+      title: 'Rubber Discs for Volumetric Sets',
+      image: 'assets/img/gallery/discs.jpg',
+      features: [
+        'Complete Sealing Performance due to high level of Flatness & Planarity of Center Disc',
+        'Excellent Surface Smoothness',
+        'Sterilization Stability',
+        'Chemical Compatibillity of all types of IV fluids',
+        'Low Extractables and Leachables',
+        'Lot to Lot Consistency',
+        'ISO 8871 Compliant',
+        'Lot Traceability'
+      ]
+    },
+    {
+      slug: 'stoppers_injection_site',
+      title: 'Injection Site Stoppers & Plugs',
+      image: 'assets/img/gallery/injection_site_stoppers.jpg',
+      features: [
+        'Excellent Coring Properties',
+        'Quick Resealability',
+        'High Level of Dimensional Consistency',
+        'Chemical Compatibillity of all types of IV fluids',
+        'Low Extractables and Leachables',
+        'Low Needle Penetration Force',
+        'Sterilization Stability',
+        'ISO 8871 Compliant'
+      ]
+    },
+    {
+      slug: 'bctp_stoppers',
+      title: 'Blood Collection Tube Stoppers & Plugs',
+      image: 'assets/img/gallery/bctp.jpg',
+      features: [
+        'Excellent Coring Properties',
+        'Superior Vacuum Retention Properties',
+        'Low Needle Penetration Force',
+        'Rapid Prototyping',
+        'Low Extractables and Leachables',
+        'Quality Compatibility with Major Pharmacopoeia Standards',
+        'Lot Traceability',
+        'Lot Consistency'
+      ]
+    },
+    {
+      slug: 'closures',
+      title: 'Pharmaceutical Rubber Closures',
+      image: 'assets/img/gallery/closures.jpg',
+      features: [
+        'Quick Resealability',
+        'Excellent Surface Finish',
+        'Low Needle Penetration Force',
+        'Chemical Compatibillity of all types of IV fluids',
+        'Low Extractables and Leachables',
+        'Lot to Lot Consistency',
+        'ISO 8871 Compliant',
+        'Lot Traceability'
+      ]
+    },
+    {
+      slug: 'gaskets',
+      title: 'Rubber Gaskets For Disposable Syringes',
+      image: 'assets/img/gallery/gaskets.jpg',
+      features: [
+        'Smooth Surface Finish for Easy Glide Force',
+        'High Level of Dimensional Accuracy',
+        'Lot to Lot Consistency',
+        'Lot Traceability',
+        'Superior Ageing Properties',
+        'Quality Compatibility with Major Pharmacopoeia standards'
+      ]
+    }
+  ];
+
+  var $hero = $('#medical-product-hero-title');
+  var $mainImg = $('#medical-product-main-img');
+  var $mainLink = $('#medical-product-main-link');
+  var $features = $('#medical-product-features');
+  var $thumbs = $('.medical-product-thumb');
+  var index = 0;
+
+  function featureHtml(text) {
+    return '<li><img src="' + checkIcon + '" alt="Check" style="' + checkStyle + '"><p>' + text + '</p></li>';
+  }
+
+  function indexFromSlug(slug) {
+    if (!slug) {
+      return -1;
+    }
+    var key = String(slug).toLowerCase();
+    for (var i = 0; i < products.length; i++) {
+      if (products[i].slug === key) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function indexFromUrl() {
+    var params = new URLSearchParams(window.location.search);
+    var fromSlug = indexFromSlug(params.get('product'));
+    if (fromSlug >= 0) {
+      return fromSlug;
+    }
+    var fromNum = parseInt(params.get('p'), 10);
+    if (!isNaN(fromNum) && fromNum >= 0 && fromNum < products.length) {
+      return fromNum;
+    }
+    return 0;
+  }
+
+  function updateUrl(slug) {
+    var url = new URL(window.location.href);
+    url.searchParams.set('product', slug);
+    url.searchParams.delete('p');
+    history.pushState({ product: slug }, '', url);
+  }
+
+  function showProduct(i, updateHistory) {
+    if (updateHistory === undefined) {
+      updateHistory = true;
+    }
+    index = (i + products.length) % products.length;
+    var p = products[index];
+    $hero.text(p.title);
+    $mainImg.attr({ src: p.image, alt: p.title });
+    $mainLink.attr('href', p.image);
+    $features.html(p.features.map(featureHtml).join(''));
+    $thumbs.removeClass('is-active').eq(index).addClass('is-active');
+    if (updateHistory && p.slug) {
+      updateUrl(p.slug);
+    }
+  }
+
+  $('.medical-product-nav--prev').on('click', function () {
+    showProduct(index - 1);
+  });
+
+  $('.medical-product-nav--next').on('click', function () {
+    showProduct(index + 1);
+  });
+
+  $thumbs.on('click', function () {
+    showProduct(parseInt($(this).data('index'), 10));
+  });
+
+  $(document).on('keydown.medicalProduct', function (e) {
+    if (e.key === 'ArrowLeft') {
+      showProduct(index - 1);
+    } else if (e.key === 'ArrowRight') {
+      showProduct(index + 1);
+    }
+  });
+
+  window.addEventListener('popstate', function () {
+    showProduct(indexFromUrl(), false);
+  });
+
+  showProduct(indexFromUrl(), false);
+})();
 
 
 })(jQuery);
