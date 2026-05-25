@@ -117,4 +117,42 @@
             }
         }
     }
+
+    // medical_product.html — bunch picker visible on lg+ only (992px+)
+    &.medical-product-picker {
+        display: none;
+        margin-top: clamp(24px, 4vh, 40px);
+        margin-bottom: clamp(24px, 4vh, 40px);
+
+        @media (min-width: 992px) {
+            display: block;
+        }
+    }
+
+    // medical_product.html — selected product keeps “hover” look (no dim overlay / label)
+    &.medical-product-picker .single-location {
+        width: 100%;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        font: inherit;
+        text-align: inherit;
+
+        &.is-active {
+            &::before {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .guest-contents {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
 }

@@ -1611,4 +1611,190 @@
 .form-group {
 	margin-bottom: 1rem;
 }
+
+/*============ Medical product gallery (medical_product.html) =============*/
+#medical-product-app .medical-product-slider-area .medical-product-slider {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    // Total band = header clearance + vertically centered title area (~⅔ previous size)
+    height: clamp(188px, 25vh, 255px);
+    min-height: clamp(188px, 25vh, 255px);
+    max-height: clamp(188px, 25vh, 255px);
+    padding-top: clamp(59px, 7.5vh, 80px);
+    padding-bottom: clamp(16px, 2.5vh, 24px);
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        height: auto;
+        flex: 0 1 auto;
+    }
+
+    .container .row,
+    .container .row > [class*="col-"] {
+        height: auto;
+    }
+
+    .hero-caption.hero-caption2 {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin-bottom: 0;
+            max-width: 100%;
+            font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+            line-height: 1.35;
+        }
+    }
+}
+
+.medical-product-row {
+    margin-top: clamp(24px, 4vh, 40px);
+    margin-bottom: clamp(24px, 4vh, 40px);
+
+    > [class*="col-"] {
+        @media #{$tab} {
+            min-height: 0;
+            height: auto;
+            max-height: none;
+        }
+
+        @media (min-width: 992px) {
+            // Tall enough for 8 feature lines (incl. wraps) without sidebar scroll
+            min-height: clamp(560px, 65vh, 760px);
+            height: clamp(560px, 65vh, 760px);
+            max-height: clamp(560px, 65vh, 760px);
+        }
+    }
+}
+
+.medical-product-viewer {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+}
+
+.medical-product-nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    // Hit area ~60px tall (12+36+12); +50% vertical on top and bottom (~30px each end)
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.75;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid rgba(0, 0, 0, 0.35);
+        outline-offset: 2px;
+    }
+
+    img {
+        width: 36px;
+        height: 36px;
+        display: block;
+    }
+}
+
+.medical-product-viewer .blog_left_sidebar {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.medical-product-viewer .blog_item {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.medical-product-viewer .blog_item_img {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(220px, 32vh, 480px);
+
+    @media (min-width: 992px) {
+        min-height: 0;
+        height: 100%;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.medical-product-viewer .blog_item_img img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.medical-product-sidebar {
+    height: 100%;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+
+    .single_sidebar_widget {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+
+        @media (min-width: 992px) {
+            overflow: visible;
+        }
+
+        @media #{$tab} {
+            overflow-y: visible;
+        }
+    }
+
+    #medical-product-features {
+        flex: 0 1 auto;
+        overflow: visible;
+    }
+
+    .cat-list li {
+        @media (min-width: 992px) {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+#medical-product-features .cat-list li p {
+    margin-bottom: 0;
+}
+
 /*============ End Blog Single Styles  =============*/
