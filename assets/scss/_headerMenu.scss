@@ -521,6 +521,24 @@ body.slicknav_open .slicknav_overlay {
 	align-items: center;
 }
 
+// Short viewport height — compact mobile header only (main-menu hidden at <= 1300px)
+@media (max-height: 800px) and (max-width: 1300px) {
+	.header-area .header-bottom {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+
+	.main-header .logo img {
+		max-width: 200px;
+	}
+}
+
+@media (max-height: 650px) and (max-width: 1300px) {
+	.main-header .logo img {
+		max-width: 170px;
+	}
+}
+
 // Collapse desktop menu to mobile at <= 1300px
 .main-header .main-menu {
   display: block;
