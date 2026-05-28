@@ -667,6 +667,18 @@
 	padding: 4px 20px !important;
 }
 
+// Keep primary site buttons consistent with nav "Contact Us" hover
+.btn_10,
+.btn,
+.header-btn2,
+.submit-btn2,
+.btn_1 {
+	@include transition(.3s);
+	&:hover {
+		background-color: $btn_hover_bg !important;
+	}
+}
+
 .full-menu {
 	padding: 35px 55px;
 	@media #{$sm}{
