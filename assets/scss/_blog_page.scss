@@ -1647,7 +1647,7 @@
         h2 {
             margin-bottom: 0;
             max-width: 100%;
-            font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+            font-size: clamp(1.35rem, 2.5vw, 2rem);
             line-height: 1.35;
         }
     }
@@ -1793,8 +1793,11 @@
     }
 }
 
-#medical-product-features .cat-list li p {
+#medical-product-features li p {
     margin-bottom: 0;
+    font-weight: 400 !important;
+    color:black !important;
+    // font-size: 18px !important;
 }
 
 /*============ End Blog Single Styles  =============*/
