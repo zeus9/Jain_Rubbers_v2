@@ -524,7 +524,12 @@ testimonial.slick({
         // Check if the current scroll position rests inside this section
         if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
             var id = currSection.attr('id');
-            var matchingLink = $('#navigation a[href*="' + id + '"]');
+            var matchingLink;
+            if (id === 'home') {
+                matchingLink = $('#navigation a[href$="index.html#home"], #navigation a[href$="index.html"], #navigation a[href$="/"]');
+            } else {
+                matchingLink = $('#navigation a[href*="' + id + '"]');
+            }
 
             // Remove active class from all menu li elements
             $('#navigation li').removeClass('active');
@@ -683,6 +688,13 @@ testimonial.slick({
     history.pushState({ product: slug }, '', url);
   }
 
+  function setHeaderActive(slug) {
+    $('#navigation li').removeClass('active');
+    var $link = $('#navigation a[href*="medical_product.html?product=' + slug + '"]');
+    $link.closest('li').addClass('active');
+    $link.closest('.submenu').closest('li').addClass('active');
+  }
+
   function showProduct(i, updateHistory) {
     if (updateHistory === undefined) {
       updateHistory = true;
@@ -697,6 +709,7 @@ testimonial.slick({
     if (updateHistory && p.slug) {
       updateUrl(p.slug);
     }
+    setHeaderActive(p.slug);
   }
 
   $('.medical-product-nav--prev').on('click', function () {
