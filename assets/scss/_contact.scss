@@ -12,6 +12,10 @@
 
   &__icon{
     margin-right: 20px;
+    color: $font_color2;
+    width: 1em;
+    height: 1em;
+    // vertical-align: -0.125em;
 
     i,span{
       color: #8f9195;
@@ -24,7 +28,8 @@
     h3{
       font-size: 1rem;
       margin-bottom: auto;
-      color: #2a2a2a;
+      color: $font_color2;
+      
       a{
         display: block;
         padding-bottom: 1em;

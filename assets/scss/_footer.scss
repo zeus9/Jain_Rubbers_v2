@@ -31,16 +31,19 @@
                  a{
                     color: #5E5E5E;
                     font-weight: 300;
-                    font-size: 0.8rem;
+                    font-size: 0.9rem;
                     text-decoration: underline transparent;
                     white-space: nowrap;
                     &:hover{
                         color:#5E5E5E;
                         text-decoration: underline;
                     }
+                    p{
+                        font-size: 0.8rem;
+                    }
                 }
                 span{
-                    color: red;
+                    color: inherit;
                 }
             }
         }
