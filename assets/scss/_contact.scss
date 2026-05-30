@@ -28,8 +28,13 @@
       a{
         display: block;
         padding-bottom: 1em;
+        color: $theme-color2;
         &:hover{
-          color: $theme-color2;
+          color: $btn_hover_bg;
+        }
+
+        p{
+          font-size: 0.8rem;
         }
       }
     }
