@@ -111,7 +111,6 @@
                     font-weight: 300;
                     padding: 21px 7px;
                     display: block;
-                    font-size: 16px;
                     @include transition(.3s);
                     text-transform: capitalize;
                     position: relative;
@@ -188,6 +187,7 @@
                 transition: all 0.3s ease-in-out;
                 // border-top: 5px solid $theme-color;
                 & > li{
+                    font-size: 18px;
                     margin-left: 7px;
                     display: block;
                     opacity: 0;
@@ -197,8 +197,7 @@
                         margin: 0px 8px;
                     }
                     & > a{
-                        padding: 10px 10px !important;
-                        font-size: 16px;
+                        padding: 10px 10px !important;                                                
                         color: #1D2547;
                         font-weight: 300;
                         text-transform: capitalize;
@@ -519,6 +518,7 @@ body.slicknav_open .slicknav_overlay {
 #navigation {
 	display: flex;
 	align-items: center;
+    font-size: 20px;
 }
 
 // Short viewport height — compact mobile header only (main-menu hidden at <= 1300px)
