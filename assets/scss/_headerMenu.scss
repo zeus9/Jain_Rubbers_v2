@@ -106,7 +106,7 @@
                     margin: 0px 3px;
                  }
                 a{
-                    font-family: $font_2;
+                    font-family: $font_1;
                     color: #fff;
                     font-weight: 300;
                     padding: 21px 7px;
@@ -131,7 +131,7 @@
                     }
                 }
                 &:not(:has(> a)):not(:has(> .header-right-btn)){
-                    font-family: $font_2;
+                    font-family: $font_1;
                     font-weight: 300;
                     padding: 21px 7px;
                     // text-transform: capitalize;
@@ -496,7 +496,7 @@ body.slicknav_open .slicknav_overlay {
     }
     // Header btn
     .header-btn {
-        font-family: $font_2;
+        font-family: $font_1;
         border: none;
         padding: 19px 21px !important; // 19 and not 21 cos font size is 18 for button, so submenus can render below the button 
         text-transform: capitalize !important;

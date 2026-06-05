@@ -1,9 +1,18 @@
 /* 1. Theme default css */
 // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+        font-family: 'Roboto';
+        src: url('../fonts/Roboto_VariableFont_wdth_wght.woff2') format('woff2-variations');
+        font-weight: 100 900;
+        font-stretch: 75% 100%;  /* Roboto's actual wdth range */
+        font-style: normal;
+        font-display: swap;
+    }
 
 body {
-	font-family: $font_2;
+	font-family: $font_1;
 	font-weight: 300;
 	font-style: normal;
 	font-size: 16px;
@@ -23,7 +32,7 @@ h6 {
 	text-transform: normal;
 }
 p {
-	font-family:$font_2;
+	font-family:$font_1;
 	color: $font_color1;
 
 	font-size: 16px;
