@@ -10,8 +10,10 @@ yarn.lock
 # Build outputs
 dist/
 build/
-*.min.js
-*.min.css
+
+# Generated CSS from SCSS
+assets/css/style.css
+assets/css/style.css.map
 
 # IDE and editor files
 .idea/

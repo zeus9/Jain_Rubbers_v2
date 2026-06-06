@@ -258,43 +258,6 @@
     });
 
 
-/* 5. Gallery Active */
-    var client_list = $('.location-active');
-    if(client_list.length){
-      client_list.owlCarousel({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        loop: true,
-        autoplay:true,
-        speed: 3000,
-        smartSpeed:2000,
-        nav:true,
-        navText:['<i class="ti-arrow-left"></i>','<i class="ti-arrow-right"></i>'],
-        dots: false,
-        margin: 0,
-
-        autoplayHoverPause: true,
-        responsive : {
-          0 : {
-            nav: false,
-            items: 1,
-          },
-          576: {
-            nav: false,
-            items: 1,
-          },
-          768 : {
-            nav: true,
-            items: 2,
-          },
-          992 : {
-            nav: true,
-            items: 3,
-          }
-        }
-      });
-    }
- 
 // Brand Active
   $('.brand-active').slick({
     dots: false,
@@ -416,6 +379,7 @@ testimonial.slick({
         popUp.magnificPopup({
           type: 'image',
           mainClass: 'mfp-with-zoom mfp-gallery',
+          removalDelay: 300, 
           gallery: {
             enabled: true,
             navigateByImgClick: true,
