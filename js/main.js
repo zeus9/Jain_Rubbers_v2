@@ -386,7 +386,7 @@ testimonial.slick({
             preload: [0, 1],
             arrowMarkup:
               '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%">' +
-              '<img src="assets/img/icon/chevron-%dir%-solid-full.svg" alt="" class="mfp-gallery-nav__icon" width="24" height="24">' +
+              '<img src="/img/icon/chevron-%dir%-solid-full.svg" alt="" class="mfp-gallery-nav__icon" width="24" height="24">' +
               '</button>',
             tPrev: 'Previous',
             tNext: 'Next',
@@ -514,14 +514,14 @@ testimonial.slick({
     return;
   }
 
-  var checkIcon = 'assets/img/icon/check-solid-full.svg';
+  var checkIcon = '/img/icon/check-solid-full.svg';
   var checkStyle = 'width:14px;height:14px;margin-right:8px;display:inline-block;vertical-align:middle;';
 
   var products = [
     {
       slug: 'injection_site',
       title: 'Rubber Bulb / Injection Site',
-      image: 'assets/img/gallery/injection_site.jpeg',
+      image: '/img/gallery/injection_site.jpeg',
       features: [
         'Quick Resealability',
         'Excellent Surface Finish',
@@ -536,7 +536,7 @@ testimonial.slick({
     {
       slug: 'rubber_discs',
       title: 'Rubber Discs for Volumetric Sets',
-      image: 'assets/img/gallery/discs.jpg',
+      image: '/img/gallery/discs.jpg',
       features: [
         'Complete Sealing Performance due to high level of Flatness & Planarity of Center Disc',
         'Excellent Surface Smoothness',
@@ -551,7 +551,7 @@ testimonial.slick({
     {
       slug: 'stoppers_injection_site',
       title: 'Injection Site Stoppers & Plugs',
-      image: 'assets/img/gallery/injection_site_stoppers.jpg',
+      image: '/img/gallery/injection_site_stoppers.jpg',
       features: [
         'Excellent Coring Properties',
         'Quick Resealability',
@@ -566,7 +566,7 @@ testimonial.slick({
     {
       slug: 'bctp_stoppers',
       title: 'Blood Collection Tube Stoppers & Plugs',
-      image: 'assets/img/gallery/bctp.jpg',
+      image: '/img/gallery/bctp.jpg',
       features: [
         'Excellent Coring Properties',
         'Superior Vacuum Retention Properties',
@@ -581,7 +581,7 @@ testimonial.slick({
     {
       slug: 'closures',
       title: 'Pharmaceutical Rubber Closures',
-      image: 'assets/img/gallery/closures.jpg',
+      image: '/img/gallery/closures.jpg',
       features: [
         'Quick Resealability',
         'Excellent Surface Finish',
@@ -596,7 +596,7 @@ testimonial.slick({
     {
       slug: 'gaskets',
       title: 'Rubber Gaskets For Disposable Syringes',
-      image: 'assets/img/gallery/gaskets.jpg',
+      image: '/img/gallery/gaskets.jpg',
       features: [
         'Smooth Surface Finish for Easy Glide Force',
         'High Level of Dimensional Accuracy',

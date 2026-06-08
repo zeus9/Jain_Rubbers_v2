@@ -5,9 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch assets/scss:assets/css --style compressed",
-    "build": "gulp",
-    "gulp-watch": "gulp watch"
+    "build": "sass scss:css --style compressed && gulp",
+    "watch": "sass --watch scss:css --style compressed"
   },
   "keywords": [],
   "author": "",

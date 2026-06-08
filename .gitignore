@@ -12,16 +12,22 @@ dist/
 build/
 
 # Generated CSS from SCSS
-assets/css/style.css
-assets/css/style.css.map
+/css/style.css
+/css/style.css.map
+.sass-cache/
+*.css.map
+
+# Generated JS bundle
+js/bundle.min.js
+
+# Firebase
+.firebase/
 
 # IDE and editor files
 .idea/
 .vscode/
 *.swp
 *.swo
-.DS_Store
-Thumbs.db
 
 # Environment files
 .env
@@ -40,9 +46,3 @@ logs/
 # System Files
 .DS_Store
 Thumbs.db
-
-# Optional: Uncomment if you use these
-# .sass-cache/
-# .scss-cache/
-# *.sass.map
-# *.scss.map 
