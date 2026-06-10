@@ -666,6 +666,12 @@ testimonial.slick({
     index = (i + products.length) % products.length;
     var p = products[index];
     $hero.text(p.title);
+    // Update the document title to include the current product name
+    try {
+      document.title = p.title + ' - Jain Rubbers';
+    } catch (e) {
+      // ignore if running in a non-browser test environment
+    }
     $mainImg.attr({ src: p.image, alt: p.title });
     $mainLink.attr('href', p.image);
     $features.html(p.features.map(featureHtml).join(''));
