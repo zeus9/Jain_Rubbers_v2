@@ -101,18 +101,15 @@
     }
 }
 .blog_area{
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
     @media #{$md}{
-        padding-top: 4rems;
         padding-bottom: 2rem;
     }
     @media #{$sm}{
-        padding-top: 3rem;
         padding-bottom: 0;
     }
     @media #{$xs}{
-        padding-top: 3rem;
         padding-bottom: 0;
     }
     a{
@@ -1666,9 +1663,9 @@
 
         @media (min-width: 992px) {
             // Tall enough for 8 feature lines (incl. wraps) without sidebar scroll
-            min-height: clamp(560px, 65vh, 760px);
-            height: clamp(560px, 65vh, 760px);
-            max-height: clamp(560px, 65vh, 760px);
+            min-height: clamp(560px, 75vh, 760px);
+            height: clamp(560px, 75vh, 760px);
+            max-height: clamp(560px, 75vh, 760px);
         }
     }
 }
@@ -1784,6 +1781,10 @@
     #medical-product-features {
         flex: 0 1 auto;
         overflow: visible;
+        p{
+            font-size: 1.1rem !important;
+        }
+        
     }
 
     .cat-list li {
