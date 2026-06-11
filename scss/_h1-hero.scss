@@ -12,7 +12,7 @@
     justify-content: flex-start;
     box-sizing: border-box;
     padding-top: clamp(88px, 11vh, 120px);
-    padding-bottom: clamp(22px, 3vh, 50px);
+    padding-bottom: clamp(1rem, 0.5vh, 3rem);
 
     > .container {
         flex: 1 1 auto;
@@ -268,7 +268,7 @@
     transform: none;
     flex: 0 0 auto;
     margin: 0 auto;
-    padding: 0 15px clamp(4px, 1vh, 12px);    
+    padding: clamp(4px, 1vh, 12px) 15px 0;
     text-align: center;
     width: calc(100% - 30px);
     max-width: 100%;
@@ -278,14 +278,14 @@
     img {
         display: inline-block;
         height: auto;
-        max-width: clamp(4.5rem, 9vw, 7rem);
+        max-width: clamp(3rem, 3vw, 7rem);
         margin-bottom: 0.5rem;
     }
 
     h6{
         font-weight: 300;
         color: #fff;
-        font-size: clamp(0.8rem, 1.9vh, 1.25rem);
+        font-size: clamp(0.8rem, 1.2vh, 1.25rem);
     }
 }
 
