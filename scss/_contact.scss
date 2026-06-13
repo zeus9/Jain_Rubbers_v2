@@ -23,8 +23,14 @@
     }
   }
 
+  #map{
+    justify-content: center;
+  }
+
   .media-body{
 
+    width: 100%;
+    
     h3{
       font-size: 1rem;
       margin-bottom: auto;
@@ -104,44 +110,62 @@
 /* Contact Success and error Area css
 ============================================================================================ */
 
+#formSuccess {
+    height: 100%;
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $success-color;
+    padding: 2rem;
+    animation: slideDown 0.8s ease 0.65s both;
 
-.modal-message {
-    .modal-dialog {
-        position: absolute;
-        top: 36%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) !important;
-        margin: 0px;
-        max-width: 500px;
-        width: 100%;
-        .modal-content {
-            .modal-header {
-                text-align: center;
-                display: block;
-                border-bottom: none;
-                padding-top: 50px;
-                padding-bottom: 50px;
-                .close {
-                    position: absolute;
-                    right: -15px;
-                    top: -15px;
-                    padding: 0px;
-                    color: #fff;
-                    opacity: 1;
-                    cursor: pointer;
-                }
-                h2 {
-                    display: block;
-                    text-align: center;
-                    padding-bottom: 10px;
-                }
-                p {
-                    display: block;
-                }
-            }
-        }
+    h4 {
+        color: $font_color2;
+        color: $heading-color;
+        font-size: 2.5rem;
+        font-weight: 350;
+    }
+    p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: $font_color2;
+        color: $heading-color;
+    }
+
+    img {
+        filter: brightness(0) invert(1);
+        height: 10rem;
+        width: 10em;
     }
 }
+
+#formError {
+    display: none; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: $theme-color4;
+    animation: slideDown 0.4s ease 0.3s both;
+    h4{
+        color: #ffffff;
+        font-size: 1.25rem;
+        display: inline-block;
+        font-weight: 350;
+    }
+
+    img {
+        margin-right: 0.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        filter: brightness(0) invert(1);
+        height: 6rem;
+        width: 6em;
+    }
+}
+
+
 .contact-section{
   padding: 130px 0 100px;
   @media #{$tab}{

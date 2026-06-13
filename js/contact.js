@@ -1,85 +1,68 @@
 $(document).ready(function(){
-    
     (function($) {
         "use strict";
 
-    
-    jQuery.validator.addMethod('answercheck', function (value, element) {
-        return this.optional(element) || /^\bcat\b$/.test(value)
-    }, "Incorrect response.");
+        // STUB: simulates emailjs.sendForm for testing
+        // const emailjs = {
+        //     sendForm: function(serviceId, templateId, form) {
+        //         console.log('📧 [STUB] emailjs.sendForm called', { serviceId, templateId, form });
+        //         return Promise.resolve();
+        //         // return Promise.reject(new Error('stub error'));
+        //     }
+        // };
 
-    // validate contactForm form
-    $(function() {
+        jQuery.validator.addMethod('phoneintl', function(value, element) {
+            return this.optional(element) || /^[+]?[0-9\s\-\(\)]{7,15}$/.test(value);
+        }, "Please enter a valid phone number.");
+
         $('#contactForm').validate({
             rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                subject: {
-                    required: true,
-                    minlength: 4
-                },
-                number: {
-                    required: true,
-                    minlength: 5
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                message: {
-                    required: true,
-                    minlength: 20
-                }
+                name:    { required: true, minlength: 2 },
+                subject: { required: true, minlength: 4 },
+                number:  { required: true, phoneintl: true },
+                email:   { required: true, email: true },
+                message: { required: true, minlength: 20 },
+                org:     { required: true, minlength: 1 }
             },
             messages: {
-                name: {
-                    required: "Please enter your name.",
-                    minlength: "your name must consist of at least 2 characters"
-                },
-                subject: {
-                    required: "Please enter the subject of your message.",
-                    minlength: "your subject must consist of at least 4 characters"
-                },
-                number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
-                },
-                email: {
-                    required: "Please enter your email address."
-                },
-                message: {
-                    required: "Please enter your message.",
-                    minlength: "Please add more details to the message."
-                }
+                name:    { required: "Please enter your name.",                     minlength: "Please enter a valid name." },
+                subject: { required: "Please enter the subject of your message.",   minlength: "Please give more details about the subject." },
+                number:  { required: "Please enter your phone number.",             phoneintl: "Please enter a valid phone number." },
+                email:   { required: "Please enter your email address." },
+                message: { required: "Please enter your message.",                  minlength: "Please add more details to the message." },
+                org:     { required: "Please enter the name of your organization.", minlength: "Please enter a valid organization name." }
             },
             submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
-                    data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
-                    },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#error').modal('show');
-                        })
-                    }
-                })
+                // 1. Honeypot check — bots fill hidden fields, humans don't
+                if ($('[name="honeypot"]').val()) {
+                    console.warn('🍯 Honeypot triggered — submission blocked.');
+                    return;
+                }
+
+                // 2. Cooldown check — 60s between submissions
+                const lastSent = localStorage.getItem('formLastSent');
+                if (lastSent && Date.now() - Number(lastSent) < 60000) {
+                    alert('Please wait a moment before sending another message.');
+                    return;
+                }
+
+                // 3. Disable button to prevent double submission
+                const $btn = $('#submitBtn');
+                $btn.prop('disabled', true);
+
+                emailjs.sendForm('service_j0f0sb9', 'template_1usshfm', form) // gmail service  
+                    .then(function() {
+                        localStorage.setItem('formLastSent', Date.now());
+
+                        $('#contactForm').fadeOut(600, function() {
+                            $('#formSuccess').css('display', 'flex');
+                        });
+                    }, function(error) {
+                        console.error('EmailJS error:', error);
+                        $('#formError').css('display', 'flex').fadeIn('slow');
+                        $btn.prop('disabled', false); // re-enable on error so they can retry
+                    });
             }
-        })
-    })
-        
- })(jQuery)
-})
+        });
+    })(jQuery);
+});
