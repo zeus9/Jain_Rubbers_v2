@@ -7,8 +7,16 @@
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
+
+#map{
+    justify-content: center;
+    @media #{$nav_breakpoint_width} {
+      margin-top: 3rem;
+  }
+}
+
 .contact-info{
-  margin-bottom: 25px;
+  margin-bottom: 1rem;
 
   &__icon{
     margin-right: 20px;
@@ -23,9 +31,8 @@
     }
   }
 
-  #map{
-    justify-content: center;
-  }
+
+
 
   .media-body{
 
@@ -38,7 +45,6 @@
       
       a{
         display: block;
-        padding-bottom: 1em;
         color: $theme-color2;
         &:hover{
           color: $btn_hover_bg;
@@ -124,20 +130,22 @@
     h4 {
         color: $font_color2;
         color: $heading-color;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         font-weight: 350;
     }
     p {
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 300;
         color: $font_color2;
         color: $heading-color;
     }
 
     img {
+        display:inline-block;
+        vertical-align:middle;
         filter: brightness(0) invert(1);
-        height: 10rem;
-        width: 10em;
+        height: 6rem;
+        width: 6em;
     }
 }
 
