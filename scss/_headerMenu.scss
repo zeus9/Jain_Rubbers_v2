@@ -408,6 +408,14 @@
         padding-top: 0.6em !important;
         padding-bottom: 0.6em !important;
         position: relative !important;
+        &:hover {
+            color: $font_color2 !important;
+            font-weight: 350 !important;
+            .slicknav_arrow {
+                color: $font_color2 !important;
+            }
+        }
+
     }
 
     // Override parent link, row and item styles 
@@ -458,6 +466,7 @@
 .slicknav_nav .header-right-btn .header-btn:hover,
 .mobile_menu .slicknav_nav .header-btn:hover {
     border-radius: 0 !important;
+    color: $font_color2 !important;
 }
 
 // Update overlay styles to work as child of mobile_menu

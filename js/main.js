@@ -49,6 +49,7 @@
         allowParentLinks: true,
         nestedParentLinks: true,
         showChildren: false,
+        closeOnClick: true,
         beforeOpen: function(trigger) {
           $('body').addClass('slicknav_open');
           $('.slicknav_btn').addClass('slicknav_open');
@@ -73,6 +74,34 @@
         e.preventDefault();
         e.stopPropagation();
         $('.slicknav_btn').click();
+      });
+
+      // Close any open submenus when clicking a link, to prevent them from being left open 
+      $(document).on('click', '.slicknav_nav a', function () {
+          var $link = $(this);
+
+          // Ignore parent toggle items — only act on actual destination links
+          if ($link.hasClass('slicknav_item') || $link.siblings('ul').length) return;
+
+          setTimeout(function () {
+              $('.slicknav_nav ul.submenu').not('.slicknav_hidden').each(function () {
+                  var $ul = $(this);
+                  var $parentLi = $ul.closest('li');
+
+                  $ul.slideUp(200)
+                    .addClass('slicknav_hidden')
+                    .attr('aria-hidden', 'true')
+                    .find('a, .slicknav_item').attr('tabindex', '-1');
+
+                  $parentLi
+                    .removeClass('slicknav_open')
+                    .addClass('slicknav_collapsed');
+
+                  $parentLi.find('.slicknav_arrow').html(
+                      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
+                  );
+              });
+          }, 400);
       });
 
       // Desktop main menu: tap to toggle submenus (hover alone fails on touch)
