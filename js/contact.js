@@ -39,9 +39,9 @@ $(document).ready(function(){
                     return;
                 }
 
-                // 2. Cooldown check — 60s between submissions
+                // 2. Cooldown check — 30s between submissions
                 const lastSent = localStorage.getItem('formLastSent');
-                if (lastSent && Date.now() - Number(lastSent) < 60000) {
+                if (lastSent && Date.now() - Number(lastSent) < 30000) {
                     alert('Please wait a moment before sending another message.');
                     return;
                 }
@@ -50,7 +50,8 @@ $(document).ready(function(){
                 const $btn = $('#submitBtn');
                 $btn.prop('disabled', true);
 
-                emailjs.sendForm('service_j0f0sb9', 'template_1usshfm', form) // gmail service  
+                emailjs.sendForm('service_j0f0sb9', 'template_1usshfm', form) // gmail service
+                // emailjs.sendForm('service_b1r6as9', 'template_1usshfm', form) // yahoo service
                     .then(function() {
                         localStorage.setItem('formLastSent', Date.now());
 
@@ -59,8 +60,9 @@ $(document).ready(function(){
                         });
                     }, function(error) {
                         console.error('EmailJS error:', error);
+                        localStorage.setItem('formLastSent', Date.now()); // throttle retries after failure too
                         $('#formError').css('display', 'flex').fadeIn('slow');
-                        $btn.prop('disabled', false); // re-enable on error so they can retry
+                        setTimeout(function() { $btn.prop('disabled', false); }, 10000); // 10s cooldown before retry
                     });
             }
         });
