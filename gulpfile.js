@@ -3,6 +3,10 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import cleanCSS from 'gulp-clean-css';
 
+// ==========================
+// PRODUCTION BUILD (-> dist)
+// ==========================
+
 // CSS — all files, no replace needed
 gulp.task('css', () => {
   return gulp.src([
@@ -39,8 +43,7 @@ gulp.task('js', () => {
   ])
   .pipe(concat('bundle.min.js'))
   .pipe(uglify({ mangle: false }))
-  .pipe(gulp.dest('js'))  // for source root
-  .pipe(gulp.dest('dist/js'));  // for deployment root
+  .pipe(gulp.dest('dist/js'));
 });
 
 // Images
@@ -61,7 +64,47 @@ gulp.task('html', () => {
   .pipe(gulp.dest('dist'));
 });
 
-// Watch
+// ==========================
+// DEV BUILD (-> root / dev env)
+// ==========================
+
+gulp.task('css-dev', () => {
+  return gulp.src([
+    'css/bootstrap.min.css',
+    'css/slicknav.css',
+    'css/slick.css',
+    'css/magnific-popup.css',
+    'css/style.css',
+  ])
+  .pipe(gulp.dest('css')); // not dist/css
+});
+
+gulp.task('js-dev', () => {
+  return gulp.src([
+    'js/vendor/jquery-1.12.4.min.js',
+    'js/vendor/modernizr-3.5.0.min.js',
+    'js/bootstrap.bundle.min.js',
+    'js/slick.min.js',
+    'js/jquery.slicknav.min.js',
+    'js/wow.min.js',
+    'js/jquery.magnific-popup.js',
+    'js/jquery.nice-select.min.js',
+    'js/jquery.counterup.min.js',
+    'js/waypoints.min.js',
+    'js/jquery.form.js',
+    'js/jquery.validate.min.js',
+    'js/contact.js',
+    'js/mail-script.js',
+    'js/jquery.ajaxchimp.min.js',
+    'js/plugins.js',
+    'js/main.js',
+  ])
+  .pipe(concat('bundle.min.js'))
+  .pipe(uglify({ mangle: false }))
+  .pipe(gulp.dest('js')); // already root, no dist/js needed
+});
+
+// Watch (prod)
 gulp.task('watch', () => {
   gulp.watch('css/*.css', gulp.series('css'));
   gulp.watch('js/**/*.js', gulp.series('js'));
@@ -70,5 +113,8 @@ gulp.task('watch', () => {
   gulp.watch('*.html', gulp.series('html'));
 });
 
-// Default
+// Default (prod)
 gulp.task('default', gulp.parallel('js', 'css', 'fonts', 'img', 'html'));
+
+// Dev build
+gulp.task('build-dev', gulp.parallel('js-dev', 'css-dev'));

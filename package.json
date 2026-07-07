@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "build": "sass scss:css --style compressed && gulp",
-    "watch": "sass --watch scss:css --style compressed"
+    "build:dev": "sass scss:css --style compressed && gulp build-dev",
+    "watch": "sass --watch scss:css --style compressed",
+    "deploy": "npm run build && firebase deploy"
   },
   "keywords": [],
   "author": "",
