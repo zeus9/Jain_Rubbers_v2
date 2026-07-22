@@ -84,4 +84,21 @@
 .theme-color {
 	color: $theme-color;
 }
+.tick-color {
+  /* Forces any base color to black, then shifts it to #1a93c8 theme color blue */
+	filter: brightness(0) saturate(100%) 
+			invert(47%) sepia(87%) saturate(541%) hue-rotate(159deg) brightness(91%) contrast(93%);
+}
+.icon-click-color {
+  /* Forces any base color to black, then shifts it to #1a93c8 theme color blue*/
+	
+	filter: brightness(0) saturate(100%) 
+			invert(47%) sepia(87%) saturate(541%) hue-rotate(159deg) brightness(91%) contrast(93%);
 
+	&:hover {
+	/* Forces any base color to black, then shifts it to #1a93c8 theme color blue */
+	filter: brightness(50%) saturate(100%) 
+			invert(79%) sepia(48%) saturate(543%) hue-rotate(124deg) brightness(96%) contrast(92%);
+	
+	}
+}

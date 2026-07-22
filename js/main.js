@@ -544,7 +544,7 @@ testimonial.slick({
   }
 
   var checkIcon = '/img/icon/check-solid-full.svg';
-  var checkStyle = 'width:14px;height:14px;margin-right:8px;display:inline-block;vertical-align:middle;';
+  var checkStyle = 'width:1.2rem;height:1.2rem;margin-right:8px;display:inline-block;vertical-align:middle;';
 
   var products = [
     {
@@ -612,14 +612,14 @@ testimonial.slick({
       title: 'Pharmaceutical Rubber Closures',
       image: '/img/gallery/closures.jpg',
       features: [
-        'Quick Resealability',
-        'Excellent Surface Finish',
-        'Low Needle Penetration Force',
-        'Chemical Compatibillity of all types of IV fluids',
+        'Optimal Compression Set for Long-Term Container Closure Integrity',
+        'Excellent Coring Properties',
+        'Silicone-Coated for Enhanced Lubricity',
+        'Compatible with a Wide Range of Drug Formulations',
         'Low Extractables and Leachables',
-        'Lot to Lot Consistency',
-        'ISO 8871 Compliant',
-        'Lot Traceability'
+        'Quality Compatibility with Major Pharmacopoeia Standards',
+        'Lot to Lot Consistency & Traceability',
+        'ISO 8871 Compliant'        
       ]
     },
     {
@@ -645,7 +645,7 @@ testimonial.slick({
   var index = 0;
 
   function featureHtml(text) {
-    return '<li><img src="' + checkIcon + '" alt="Check" style="' + checkStyle + '"><p>' + text + '</p></li>';
+    return '<li><img src="' + checkIcon + '" alt="Check" class="tick-color" style="' + checkStyle + '"><p>' + text + '</p></li>';
   }
 
   function indexFromSlug(slug) {

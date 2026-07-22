@@ -755,10 +755,7 @@
     }
 
     .single_sidebar_widget {
-        // background: #fbf9ff;
         background: $white_color;
-        padding: 30px;
-        // margin-bottom: 30px;
         .btn_1{
             margin-top: 0px;
         }
@@ -859,6 +856,11 @@
                 padding-bottom: 12px;
                 display: flex;
                 align-items: start;
+                padding: 0.5rem;
+        
+                @media (min-width: 992px) {
+                    padding: 1rem;                    
+                }
 
                 &:last-child {
                     border-bottom: 0;
@@ -872,19 +874,7 @@
                         margin: 0;
                         color: $font_color2 !important;
                     }
-                
 
-                &+li {
-                    padding-top: 15px;
-                }
-
-                &:hover {
-
-                    // border-// color: $title-color;
-                    a {
-                        // // color: $baseColor;
-                    }
-                }
             }
         }
     }
@@ -1665,7 +1655,7 @@
             // Tall enough for 8 feature lines (incl. wraps) without sidebar scroll
             min-height: clamp(560px, 75vh, 760px);
             height: clamp(560px, 75vh, 760px);
-            max-height: clamp(560px, 75vh, 760px);
+            max-height: auto;
         }
     }
 }
@@ -1707,8 +1697,8 @@
     }
 
     img {
-        width: 36px;
-        height: 36px;
+        width: 1.5rem;
+        height: 1.5rem;
         display: block;
     }
 }
@@ -1781,16 +1771,16 @@
     #medical-product-features {
         flex: 0 1 auto;
         overflow: visible;
+        
         p{
             font-size: 1.1rem !important;
         }
         
-    }
-
-    .cat-list li {
         @media (min-width: 992px) {
-            margin-bottom: 12px;
+            padding-right: 0;
+            padding-left: 3rem;
         }
+        
     }
 }
 
@@ -1798,7 +1788,6 @@
     margin-bottom: 0;
     font-weight: 400 !important;
     color:black !important;
-    // font-size: 18px !important;
 }
 
 /*============ End Blog Single Styles  =============*/

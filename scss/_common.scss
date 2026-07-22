@@ -595,6 +595,10 @@ hr {
 
 /*-- Section Padding -- */
 .section-padding{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 	padding-top: 120px;
 	padding-bottom: 120px;
 	@media #{$md}{
