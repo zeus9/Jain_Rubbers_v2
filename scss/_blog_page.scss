@@ -101,6 +101,8 @@
     }
 }
 .blog_area{
+    display: flex;
+    align-items: stretch;
     padding-top: 1rem;
     padding-bottom: 3rem;
     @media #{$md}{

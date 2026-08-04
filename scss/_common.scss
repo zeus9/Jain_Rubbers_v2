@@ -597,9 +597,9 @@ hr {
 .section-padding{
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
+	height: 100%;
 	
-	padding-top: 120px;
 	padding-bottom: 120px;
 	@media #{$md}{
 		padding-top: 100px;
@@ -613,7 +613,9 @@ hr {
 		padding-top: 70px;
 		padding-bottom: 70px;
 	}
+
 }
+
 .top-padding{
 	padding-top: 120px;
 	@media #{$md}{
