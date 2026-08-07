@@ -125,6 +125,7 @@
         }
 
         p{
+            margin-top: 2rem;
             color: #fff;
             margin-bottom: 41px;
             font-size: 24px;
@@ -144,11 +145,11 @@
             }
             @media #{$sm}{
                 margin-bottom: 43px;
-                font-size: 21px;
+                font-size: 1rem;
             }
             @media #{$xs}{
                 margin-bottom: 43px;
-                font-size: 21px;
+                font-size: 1rem;
             }
         }
         // Another Page
